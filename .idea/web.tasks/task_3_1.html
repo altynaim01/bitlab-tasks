@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .header {
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+        width: calc(100% - 15px);
+        background-color: blue;
+        color: white;
+        height: 20px;
+        border: 2px solid darkblue;
+    }
+
+    .firstHeader {
+        font-weight: bolder;
+        font-size: larger;
+        width: 60%;
+    }
+
+    .secondHeader {
+        font-weight: bold;
+        width: 40%;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .secondHeader div {
+        padding: 0 10px;
+    }
+
+    .body {
+        display: flex;
+        flex-direction: row;
+        color: black;
+        padding-top: 15px;
+    }
+
+    .firstBody {
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        margin-top: 10px;
+    }
+
+    .firstBody label {
+        padding-bottom: 10px;
+    }
+
+    .firstBody input {
+        margin-bottom: 10px;
+        width: fit-content;
+    }
+
+    #signIn {
+        width: fit-content;
+        background-color: limegreen;
+        color: white;
+        border: 2px solid forestgreen;
+        border-radius: 5px;
+    }
+
+    #newAcc {
+        font-weight: bold;
+    }
+
+    .secondBody {
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+    }
+
+    .secondBody div{
+        font-weight: bolder;
+        font-size: 30px;
+        color: darkblue;
+        font-family: "Times New Roman";
+        margin: 10px;
+    }
+
+    .thirdBody{
+        margin-left: 10px;
+    }
+
+    table{
+        border-collapse: collapse;
+        background-color: antiquewhite;
+    }
+
+    th, td {
+        border: 1px solid white;
+        padding: 8px;
+        text-align: left;
+        margin: 2px;
+    }
+
+    th {
+        background-color: black;
+        color: white;
+    }
+
+    .level1{
+        background-color: green;
+    }
+
+    .level2{
+        background-color: limegreen;
+    }
+
+    .level3{
+        background-color: plum;
+    }
+
+</style>
+<body>
+<div class="header">
+    <div class="firstHeader">BITLAB NEWS</div>
+    <div class="secondHeader">
+        <div>About</div>
+        <div>Contacts</div>
+        <div>FAQ</div>
+        <div>Login</div>
+    </div>
+</div>
+<div class="body">
+    <div class="firstBody">
+        <label>EMAIL: </label>
+        <input type="text" placeholder="Insert email">
+        <label>PASSWORD: </label>
+        <input type="password" placeholder="Insert password">
+        <button id="signIn">Sign in</button>
+        <p>I want to create <a id="newAcc" style="color: blue;font-style: italic">new account</a></p>
+    </div>
+
+    <div class="secondBody">
+        <div>Regis College Photo Gallery</div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvL6DoX2Y9U95hq8fAv1-mtTV_cgxLZ3zYgg&s">
+        <p>If you’ve ever watched a monster movie, you know the scene. The triumphant heroes walk away, the creature
+            they had just vanquished left for dead behind them. And then, in a furious flash just before the credits
+            start rolling, it opens its eyes and pounces, assuring us that evil never truly dies and that the sequel is
+            coming. <b style="color: darkblue">Read more ...</b></p>
+
+        <div>Expert panel calls for nutrition competencies in U.S. medical education</div>
+        <img src="https://www.hsph.harvard.edu/news/wp-content/uploads/sites/21/2024/09/iStock-958607128-scaled.jpg">
+        <p>Boston, MA—A professionally-diverse panel of medical and nutrition experts have proposed a set of recommended
+            nutrition competencies for medical students and physician trainees. The study addresses a longstanding
+            concern that most physicians in the U.S. are not equipped to advise patients about nutrition and food
+            choices.  <b style="color: darkblue">Read more ...</b></p>
+    </div>
+
+    <div class="thirdBody">
+<table>
+    <thead>
+    <th>No</th>
+    <th>Team</th>
+    <th>P</th>
+    <th>W</th>
+    <th>D</th>
+    <th>L</th>
+    <th>GD</th>
+    <th>P</th>
+    </thead>
+    <tbody>
+    <tr class="level1">
+        <td>1</td>
+        <td>Команда А</td>
+        <td>10</td>
+        <td>8</td>
+        <td>1</td>
+        <td>1</td>
+        <td>15</td>
+        <td>25</td>
+    </tr>
+    <tr class="level2">
+        <td>2</td>
+        <td>Команда Б</td>
+        <td>10</td>
+        <td>7</td>
+        <td>2</td>
+        <td>1</td>
+        <td>10</td>
+        <td>23</td>
+    </tr>
+    <tr class="level2">
+        <td>3</td>
+        <td>Команда В</td>
+        <td>10</td>
+        <td>6</td>
+        <td>3</td>
+        <td>1</td>
+        <td>5</td>
+        <td>21</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Команда Г</td>
+        <td>10</td>
+        <td>5</td>
+        <td>4</td>
+        <td>1</td>
+        <td>0</td>
+        <td>19</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>Команда Д</td>
+        <td>10</td>
+        <td>3</td>
+        <td>3</td>
+        <td>4</td>
+        <td>-5</td>
+        <td>12</td>
+    </tr>
+    <tr class="level3">
+        <td>6</td>
+        <td>Команда Е</td>
+        <td>10</td>
+        <td>2</td>
+        <td>2</td>
+        <td>6</td>
+        <td>-10</td>
+        <td>8</td>
+    </tr>
+    <tr class="level3">
+        <td>7</td>
+        <td>Команда Ж</td>
+        <td>10</td>
+        <td>1</td>
+        <td>1</td>
+        <td>8</td>
+        <td>-15</td>
+        <td>4</td>
+    </tr>
+    </tbody>
+</table>
+
+    </div>
+</div>
+
+</body>
+</html>
