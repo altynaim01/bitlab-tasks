@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+  let a = parseInt(prompt("Введите (a):"));
+  let b = parseInt(prompt("Введите (b):"));
+  let c = parseInt(prompt("Введите  (c):"));
+
+  if (a > 0 && b > 0 && c > 0) {
+    if (a + b > c && a + c > b && b + c > a) {
+      alert("YES");
+    } else {
+      alert("NO");
+    }
+  } else {
+    alert("Стороны должны быть натуральными числами.");
+  }
+
+
+</script>
+</body>
+</html>

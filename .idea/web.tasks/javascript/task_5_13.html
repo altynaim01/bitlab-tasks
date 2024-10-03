@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  //Напишите программу, которая может определить вашу будущую профессию по вашим способностям. Программа будет задавать несколько вопросов и примерно по ним определит кем вам нужно стать в будущем.
+
+  let branch = parseInt(prompt("Choose your branch:\n1 - Science, 2 - Humanitarian subjects, 3 - Art, 4 - Sport"));
+  if(branch === 1){
+    let r = parseInt(prompt("Вы выбрали Science - Науку. Choose your next type: \n1 - Math, 2 - Physics"));
+    if(r === 1){
+      alert("You are Financier");
+    }
+    else if (r === 2){
+      alert("You are Engineer");
+    }
+  }
+  else if(branch === 2){
+    let r = parseInt(prompt("Вы выбрали Humanitarian subjects. Choose your next type: \n1 - History, 2 - Foreign Languages"));
+    if(r === 1){
+      alert("You are Historic or Diplomat");
+    }
+    else if (r === 2){
+      alert("You are Translator");
+    }
+  }
+  else if(branch === 3){
+    let r = parseInt(prompt("Вы выбрали Art - Искусство. Choose your next type: \n1 - Drawing, 2 -Singing"));
+    if(r === 1){
+      alert("You are Painter or Architect");
+    }
+    else if (r === 2){
+      alert("You are Singer or Tamada");
+    }
+  }
+  else if(branch === 4){
+    let r = parseInt(prompt("Вы выбрали Sport - Спорт. Choose your next type: \n1 - Team, 2 - Individual"));
+    if(r === 1){
+      alert("You are footballer or Basketball player");
+    }
+    else if (r === 2){
+      alert("You are boxer or tennis player");
+    }
+  }
+
+
+
+</script>
+</body>
+</html>

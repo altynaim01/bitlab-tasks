@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+  let tg = parseInt(prompt("Enter tg: "));
+  let dollars = parseInt(tg / 380);
+  let cents = tg % 380;
+  if(cents > 0){
+    alert(`${dollars} USD and ${cents} cents`);
+  }
+  else{
+    alert(`ONLY ${dollars} USD`);
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  //Напишите программу где я ввожу логин и пароль. И если они совпадают, то мы выводим Authentication completed, иначе Invalid login or password.
+  const login = 'user';
+  const pass = 'qwerty';
+
+  let input = prompt("Enter login and password ? ");
+  let res = input.split(' ').map(a => a.trim());
+  if(res[0] === login && res[1] === pass){
+      alert("Authentication completed");
+  }
+  else{
+      alert("Invalid login or password");
+  }
+</script>
+</body>
+</html>

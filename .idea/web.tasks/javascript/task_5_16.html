@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+  let minut = parseInt(prompt("Enter minutes: "));
+
+  let hours = Math.floor(minut/60);
+  let minutes = minut % 60;
+
+  if(minutes > 0) {
+    alert(`${hours} HOURS and ${minutes} MINUTES`);
+  }
+  else{
+    alert(`ONLY ${hours} HOURS`);
+  }
+</script>
+</body>
+</html>

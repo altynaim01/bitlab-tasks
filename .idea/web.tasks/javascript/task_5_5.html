@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt("Введите количество школьников (n):"));
+    let k = parseInt(prompt("Введите количество яблок (k):"));
+
+    if (isNaN(n) || isNaN(k) || n <= 0) {
+        alert("Пожалуйста, введите корректные положительные числа.");
+    }
+
+    let applesPerStudent = Math.floor(k / n);
+
+    alert("Каждому школьнику достанется " + applesPerStudent + " яблок.");
+</script>
+</body>
+</html>

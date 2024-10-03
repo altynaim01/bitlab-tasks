@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let tg = parseInt(prompt("INSERT YOUR AMOUNT IN KZT: "));
+    let num = parseInt(prompt("Number of currency \n 1- CONVERT TO USD\n2- CONVERT TO EUR\n3- CONVERT TO GBP\n(Курсы валют: USD - 380KZT, EUR - 430KZT, GBP - 480KZT)"));
+    let res;
+    switch (num) {
+        case 1:
+            res = tg / 380;
+            alert(`${tg} KZT = ${res} USD`);
+        case 2:
+            res = tg / 430;
+            alert(`${tg} KZT = ${res} EUR`);
+        case 3:
+            res = tg / 480;
+            alert(`${tg} KZT = ${res} GBP`);
+    }
+
+</script>
+</body>
+</html>
