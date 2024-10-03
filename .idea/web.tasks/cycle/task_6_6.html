@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+  let books = [
+    {
+      title: "Война и мир",
+      author: "Лев Толстой",
+      isbn: "978-5-16-004489-8",
+      price: 450
+    },
+    {
+      title: "1984",
+      author: "Джордж Оруэлл",
+      isbn: "978-0-452-28423-4",
+      price: 350
+    },
+    {
+      title: "Убить пересмешника",
+      author: "Харпер Ли",
+      isbn: "978-0-06-112008-4",
+      price: 500
+    },
+    {
+      title: "Гарри Поттер и философский камень",
+      author: "Дж.К. Роулинг",
+      isbn: "978-0-7475-3274-8",
+      price: 600
+    },
+    {
+      title: "Анна Каренина",
+      author: "Лев Толстой",
+      isbn: "978-5-17-070050-7",
+      price: 400
+    },
+    {
+      title: "Анна Каренина",
+      author: "Лев Толстой2",
+      isbn: "978-5-17-070050-222",
+      price: 4002
+    }
+  ];
+
+  let input = prompt("Enter book title: ");
+  let res = "";
+
+  for(let i=0;i<books.length;i++){
+    if(input === books[i].title){
+      res += "\n" + books[i].title + " - " + books[i].author + " + " + books[i].isbn + " - " + books[i].price + "$";
+    }
+  }
+  alert(res);
+
+</script>
+</body>
+</html>

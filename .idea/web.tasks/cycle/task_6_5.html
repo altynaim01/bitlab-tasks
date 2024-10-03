@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function login() {
+
+        let users = [
+
+            {"login": "ilyas", "password": "qwerty"},
+
+            {"login": "eldar", "password": "qqqqq"},
+
+            {"login": "assylkhan", "password": "qweqwe"},
+
+            {"login": "anel", "password": "asdasd"},
+
+            {"login": "alibek", "password": "aaaaaa"}
+
+        ];
+
+
+        let input = prompt("Enter login and password: ").split(' ').map(a => a.trim());
+        for (let i = 0; i < users.length; i++) {
+            if (users[i].login === input[0] && users[i].password === input[1]) {
+                alert("Welcome, you are authenticated");
+                return;
+            }
+        }
+
+        alert("User not found");
+    }
+
+    login();
+
+
+</script>
+</body>
+</html>

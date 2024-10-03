@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+  let num = parseInt(prompt("Enter count: "));
+let arr = [];
+    let arrr = prompt("Numbers: ").split(' ').map(a => arr.unshift(a.split()));
+let s = "";
+    for(let i=0;i<num;i++){
+      s += " " + arr.shift();
+    }
+    alert(s);
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+  let num = parseInt(prompt("Enter count: "));
+  let arr = prompt("Numbers: ").split(' ').map(a => a.split());
+  let s = 0;
+  for(let i=0;i<num;i++){
+          s =s +  parseInt(arr[i]);
+  }
+  alert(s + " " + parseInt(s/num));
+</script>
+</body>
+</html>
