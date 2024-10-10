@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  //Напишите программу которая запрашивает числа пока мы не введем 0.
+  // Все введенные числа кроме 0 должны записываться в массив. В итоге
+  // выведите геометрическую среднюю введенных чисел.
+function zeroAver() {
+  let inputs = prompt("Enter numbers: ").split(" ").map(a => a.trim());
+  let sum = 0;
+  let count = 0;
+  for (let a of inputs) {
+    if (a == 0) {
+      alert(sum/count);
+      return;
+    }
+    else{
+      sum = sum + parseInt(a);
+      count++;
+    }
+  }
+}
+
+zeroAver();
+
+</script>
+</body>
+</html>

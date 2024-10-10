@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//Программа запрашивает число n. Далее, мы вводим n чисел и сохраняем все введенные числа в массив. Далее,
+// программа запрашивает пользователя число m. Если число m существует в нашем массиве, программа должна
+// вывести слово "Yes" и вывести индекс (расположение, адрес) данного числа. Иначе вывести слово "No".
+
+let num  = parseInt(prompt("Enter number: "));
+let arr = prompt("Numbers: ").split(" ").map(a => a.trim());
+let array = false;
+for(let i=0;i<num;i++){
+    if(arr[i] === arr[num]){
+        array = true;
+        alert("Yes " + i);
+    }
+}
+if(!array){
+    alert("NO");
+}
+
+</script>
+</body>
+</html>

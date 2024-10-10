@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <label for="cardNumber">Номер карты:</label>
+    <input type="text" id="cardNumber" placeholder="Введите номер карты" maxlength="16"><br><br>
+    <label for="fullName">NAME SURNAME:</label>
+    <input type="text" id="fullName" placeholder="Введите NAME SURNAME"><br><br>
+    <label for="cvv">CVV:</label>
+    <input type="text" id="cvv" placeholder="Введите CVV"><br><br>
+
+
+    <button id="submitCard">Отправить</button>
+</div>
+<script>
+    const testAccounts = [
+        {
+            name: 'Alice Johnson',
+            cvv: '123',
+            card: '4532123456789010'
+        },
+        {
+            name: 'Bob Smith',
+            cvv: '456',
+            card: '5500123456789010'
+        },
+        {
+            name: 'Charlie Brown',
+            cvv: '789',
+            card: '6011123456789010'
+        },
+        {
+            name: 'Diana Prince',
+            cvv: '321',
+            card: '3400123456789010'
+        },
+        {
+            name: 'Ethan Hunt',
+            cvv: '654',
+            card: '371449635398431'
+        }
+    ];
+    document.getElementById('submitCard').addEventListener('click',cardAuth);
+    var body = document.body;
+
+    function cardAuth(){
+        let res = false;
+        for(let a of testAccounts){
+            if(a.card === document.getElementById("cardNumber").value && a.cvv === document.getElementById('cvv').value){
+                res = true;
+            }
+        }
+
+        if(res){
+            body.innerHTML = "<p>Transaction completed</p>";
+        }
+        else{
+            body.innerHTML = '<p>Invalid Data</p>';
+        }
+    }
+</script>
+</body>
+</html>

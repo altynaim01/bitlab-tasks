@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Создайте функцию, которая принимает в аргументы две строки, login (логин) и password (пароль).
+ Функция должна возвращать true в случае если у меня в глобальном массиве имеется пользователь с
+  такими логином и паролем, а иначе - false. В теле моего документа, у меня имеется текстовое поле,
+  поле для пароля и кнопка подтверждения. Получается я ввожу туда логин и пароль, затем провожу авторизацию.
+  Если все проходит успешно, то моя форма авторизации (текстовое поле, поле для пароля и кнопка) исчезнет,
+   и вместо него высветиться сообщение в блоке "You are authenticated". Но если система не нашла такого пользователя,
+    то границы текстового поля и поля для пароли меняются в красный цвет.-->
+<div class="bodyy">
+    <label>Login:</label>
+    <input type="text" name="login" id="login"><br><br>
+    <label>Password:</label>
+    <input type="password" name="pass" id="pass"><br><br>
+    <button id="signIn">Sign in</button>
+</div>
+<script>
+    const testAccounts = [
+        {name: 'Alice', password: 'alice123'},
+        {name: 'Bob', password: 'bob456'},
+        {name: 'Charlie', password: 'charlie789'},
+        {name: 'Diana', password: 'diana321'},
+        {name: 'Ethan', password: 'ethan654'}
+    ];
+
+    var but = document.getElementById('signIn');
+    but.addEventListener("click", auth);
+
+    function auth() {
+        const loginValue = document.getElementById('login');
+        const passwordValue = document.getElementById('pass');
+        console.log(loginValue + " login");
+        console.log(passwordValue + " pass");
+        let res = false;
+        for(let a of testAccounts){
+            if(a.name === loginValue.value && a.password === passwordValue.value){
+                res = true;
+            }
+        }
+        if(res){
+            var body = document.querySelector('.bodyy');
+            body.innerHTML="";
+            body.innerHTML = "<p>You are authenticated</p>";
+        }
+        else{
+            loginValue.style.border = '2px solid red';
+            passwordValue.style.border = '2px solid red';
+        }
+
+
+    }
+</script>
+</body>
+</html>

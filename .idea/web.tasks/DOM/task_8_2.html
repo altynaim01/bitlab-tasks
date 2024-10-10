@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="button"  onclick="minus()" style="padding: 5px;width: max-content;background-color: firebrick;color: white" value="-">
+<input type="text" id="num" value="0" style="background-color: gold;color: black;padding: 5px;">
+<input type="button" onclick="plus()" style="padding: 5px;width: max-content;background-color: green;color: white" value="+">
+
+<script>
+    var num = document.getElementById('num');
+    function minus(){
+        num.value = parseInt(num.value) - 1;
+    }
+
+    function plus(){
+        num.value = parseInt(num.value) + 1;
+    }
+</script>
+</body>
+</html>

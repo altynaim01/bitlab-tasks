@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  //Вводим число n. Затем n элементов и записываем все элементы в массив. В итоге выведите умножение элементов не равных нулю.
+  let n = parseInt(prompt("Enter count: "));
+  let inputs = prompt("Enter numbers: ").split(" ").map(a => a.trim());
+  let res = 1;
+  for (let a=0;a < n;a++) {
+    if (inputs[a] != 0) {
+        res = res * parseInt(inputs[a]);
+    }
+  }
+  alert(res);
+</script>
+</body>
+</html>

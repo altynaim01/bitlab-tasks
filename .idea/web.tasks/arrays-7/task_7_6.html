@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let students = [
+    {
+      firstName: "Иван",
+      lastName: "Петров",
+      gpa: 3.5
+    },
+    {
+      firstName: "Мария",
+      lastName: "Сидорова",
+      gpa: 4.0
+    },
+    {
+      firstName: "Алексей",
+      lastName: "Иванов",
+      gpa: 2.8
+    },
+    {
+      firstName: "Елена",
+      lastName: "Кузнецова",
+      gpa: 3.9
+    },
+    {
+      firstName: "Ольга",
+      lastName: "Смирнова",
+      gpa: 3.2
+    }
+  ];
+
+  function addStudent(){
+      let name = prompt("INSERT NAME:");
+      let surname = prompt("INSERT SURNAME:");
+      let gpa = prompt("INSERT GPA:");
+      students.push({ firstName: name , lastName: surname, gpa: gpa });
+  }
+
+  function showStudents(){
+      let res = "";
+      for(let a of students){
+          res += a.lastName + " " + a.firstName + " - " + a.gpa + "\n";
+      }
+      alert(res);
+  }
+
+  function main(){
+      let num;
+      do {
+          num = parseInt(prompt("PRESS 1 TO ADD STUDENT\n PRESS 2 TO LIST STUDENT\nPRESS 0 TO EXIT"));
+          switch (num) {
+              case 1:
+                  addStudent();
+                  break;
+              case 2:
+                  showStudents();
+                  break;
+              case "0":
+                  alert("Exiting the program.");
+                  break;
+              default:
+                  alert("Invalid option. Please choose again.");
+          }
+      }while (num!== "0");
+  }
+
+  main();
+
+
+
+</script>
+</body>
+</html>
