@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .list {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+    }
+
+    .obj {
+        margin-bottom: auto;
+        border: 2px solid gray;
+        padding: 5px;
+    }
+
+    .topic {
+        font-weight: bold;
+        font-size: large;
+    }
+
+    .desc {
+        color: gray;
+    }
+
+    #add {
+        background-color: green;
+        color: white;
+        border: 2px solid green;
+    }
+
+    .basket{
+        margin-top: 30px;
+    }
+
+    table {
+        width: 50%;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid gray;
+        padding: 10px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+    button {
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+
+
+
+</style>
+<body>
+<div class="list"></div>
+
+<div class="basket">
+    <table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody class="body">
+
+    </tbody>
+    </table>
+</div>
+
+<script>
+    const gadgets = [
+        {
+            name: "Смартфон XYZ",
+            price: 599,
+            description: "Современный смартфон с отличной камерой и длительным временем работы."
+        },
+        {
+            name: "Планшет ABC",
+            price: 399,
+            description: "Легкий и мощный планшет для работы и развлечений."
+        },
+        {
+            name: "Ноутбук DEF",
+            price: 999,
+            description: "Универсальный ноутбук с высоким разрешением экрана и производительной начинкой."
+        },
+        {
+            name: "Наушники GHI",
+            price: 149,
+            description: "Беспроводные наушники с качественным звуком и долгим временем работы."
+        },
+        {
+            name: "Умные часы JKL",
+            price: 249,
+            description: "Стильные умные часы с функциями отслеживания здоровья."
+        },
+        {
+            name: "Электронная книга MNO",
+            price: 119,
+            description: "Компактная электронная книга с антибликовым экраном."
+        },
+        {
+            name: "Гарнитура PQR",
+            price: 89,
+            description: "Удобная игровая гарнитура с микрофоном и хорошим звучанием."
+        },
+        {
+            name: "Фитнес-браслет STU",
+            price: 59,
+            description: "Легкий фитнес-браслет для отслеживания активности и сна."
+        },
+        {
+            name: "Камера VWX",
+            price: 499,
+            description: "Камера с высоким качеством изображения и множеством режимов съемки."
+        },
+        {
+            name: "Игровая консоль YZ",
+            price: 299,
+            description: "Современная игровая консоль с большим выбором игр."
+        },
+        {
+            name: "Проектор ABC",
+            price: 349,
+            description: "Компактный проектор для просмотра фильмов и презентаций."
+        },
+        {
+            name: "Смарт-колонка DEF",
+            price: 129,
+            description: "Умная колонка с голосовым управлением и качественным звуком."
+        },
+        {
+            name: "Клавиатура GHI",
+            price: 69,
+            description: "Механическая клавиатура для геймеров с подсветкой."
+        },
+        {
+            name: "Мышь JKL",
+            price: 39,
+            description: "Эргономичная мышь с высоким разрешением сенсора."
+        },
+        {
+            name: "Внешний жесткий диск MNO",
+            price: 89,
+            description: "Удобный внешний жесткий диск для хранения данных."
+        },
+        {
+            name: "Робот-пылесос PQR",
+            price: 399,
+            description: "Умный робот-пылесос для автоматической уборки вашего дома."
+        }
+    ];
+//сначала откоментируем ниже 2 строки и потом только проверяем после того как сохраняем на localstorage данные
+    // localStorage.setItem('list', JSON.stringify(gadgets));
+    // localStorage.setItem('draft', null);
+
+    window.onload = show;
+
+
+    function show() {
+        let list = document.querySelector('.list');
+        let gadgets2 = localStorage.getItem('list');
+        let gadgets3 = JSON.parse(gadgets2);
+
+        gadgets3.forEach((a, index) => {
+            const div = document.createElement('div');
+            div.classList.add('obj');
+            const topic = document.createElement('p');
+            topic.classList.add('topic');
+            topic.innerHTML = a.name + " - " + a.price + " KZT";
+            div.append(topic);
+            const desc = document.createElement('p');
+            desc.classList.add('desc');
+            desc.innerHTML = a.description;
+            div.append(desc);
+            const butt = document.createElement('input');
+            butt.type = 'button';
+            butt.id = 'add';
+            butt.value = '+ Add to Basket';
+
+            butt.addEventListener('click', function () {
+                let drafts  = JSON.parse(localStorage.getItem('draft')) || [];
+                drafts.push(a);
+                localStorage.setItem('draft', JSON.stringify(drafts));
+                gadgets3.splice(index, 1);
+                localStorage.setItem('list', JSON.stringify(gadgets3));
+                list.removeChild(div);
+                location.reload();
+            });
+            div.append(butt);
+            list.append(div);
+        });
+
+        if (localStorage.draft != null) {
+            let basket = document.querySelector('.body');
+            let basketList = JSON.parse(localStorage.getItem('draft'));
+            basketList.forEach((gadget, index) => {
+                const row = document.createElement("tr");
+
+                const name = document.createElement("td");
+                name.innerHTML = gadget.name;
+                row.append(name);
+
+                const price = document.createElement("td");
+                price.innerHTML = gadget.price + " KZT";
+                row.append(price);
+
+                const deleteCell = document.createElement("td");
+                const deleteButton = document.createElement("button");
+                deleteButton.textContent = "Delete";
+                deleteButton.addEventListener("click", function () {
+                    let gadgets4 = JSON.parse(localStorage.getItem('list')) || [];
+                    gadgets4.push(gadget);
+                    localStorage.setItem('list', JSON.stringify(gadgets4));
+                    basketList.splice(index, 1);
+                    localStorage.setItem('draft', JSON.stringify(basketList));
+                    basket.removeChild(row);
+                    location.reload();
+                });
+                deleteCell.append(deleteButton);
+                row.append(deleteCell);
+                basket.append(row);
+            });
+        }
+    }
+
+
+</script>
+</body>
+</html>

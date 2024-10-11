@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .main{
+            display: flex;
+            flex-direction: column;
+            width: fit-content;
+        }
+    </style>
+</head>
+<body>
+<div class="main" >
+    <label for="name">Name: </label>
+    <input id="name" type="text">
+    <label for="surname">Surname: </label>
+    <input id="surname" type="text">
+    <label for="country">Country: </label>
+    <select id="country">
+        <option value=""></option>
+        <option value="Kazakhstan">Kazakhstan</option>
+        <option value="Russia">Russia</option>
+        <option value="Turkey">Turkey</option>
+    </select>
+    <label for="phone">Phone Number: </label>
+    <input type="text" id="phone">
+
+    <input type="button" style="margin-top: 10px;margin-bottom: 10px;" id="register" value="Register">
+    <input type="button" value="Save to Draft" id="draft">
+
+
+</div>
+
+<script>
+
+    function saved(){
+        console.log("user " + localStorage.user);
+        let user = {};
+        if(localStorage.user != null){
+            let obj = localStorage.getItem('user');
+            user = JSON.parse(obj);
+        }
+
+       document.getElementById('name').value = user.name;
+       document.getElementById('surname').value = user.surname;
+       document.getElementById('country').value = user.country;
+       document.getElementById('phone').value = user.phone;
+    }
+    document.getElementById('draft').addEventListener('click', change);
+window.onload = saved();
+    function change(){
+        const user1 = {};
+        user1.name = document.getElementById('name').value;
+        user1.surname = document.getElementById('surname').value;
+        user1.country = document.getElementById('country').value;
+        user1.phone = document.getElementById('phone').value;
+
+        localStorage.user = JSON.stringify(user1);
+    }
+</script>
+</body>
+</html>

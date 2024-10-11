@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .main{
+            display: flex;
+            flex-direction: row;
+            width: 50%;
+        }
+
+        .group{
+            width: 70%;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <div class="group">
+        <p>Введите сумму: </p>
+        <input type="number" id="value">
+    </div>
+    <div class="group">
+        <p>\</p>
+        <select id="selection">
+            <option value="null"></option>
+            <option value="tenge">KZT (tenge)</option>
+            <option value="dollar">USD (dollar)</option>
+            <option value="euro">EUR (euro)</option>
+        </select>
+    </div>
+    <div class="group">
+        <p>KZT (tenge)</p>
+        <input type="text" readonly id="kzt" style="background-color: antiquewhite">
+    </div>
+    <div class="group">
+        <p>USD (dollar)</p>
+        <input type="text" readonly id="usd" style="background-color: antiquewhite">
+    </div>
+    <div class="group">
+        <p>EUR (euro)</p>
+        <input type="text" readonly id="eur" style="background-color: antiquewhite">
+    </div>
+</div>
+<script>
+    document.getElementById('selection').addEventListener('change', change);
+    document.getElementById('value').addEventListener('change', function (){
+        change();
+    })
+
+    function change(){
+        const selection = document.getElementById('selection').value;
+        const tg = document.getElementById('kzt');
+        const dollar = document.getElementById('usd');
+        const euro = document.getElementById('eur');
+        const value = document.getElementById('value');
+        if(selection === 'tenge'){
+            tg.value = '-';
+            dollar.value = parseFloat(value.value/431).toFixed(2);
+            euro.value = parseFloat(value.value/509).toFixed(2);
+        }
+        else if(selection === 'dollar'){
+            dollar.value = '-';
+            tg.value = parseFloat(value.value * 429).toFixed(2);
+            euro.value = parseFloat(value.value / 1.18).toFixed(2);
+        }
+        else if(selection === 'euro'){
+            euro.value = '-';
+            tg.value = parseFloat(value.value * 507).toFixed(2);
+            dollar.value = parseFloat(value.value * 1.18).toFixed(2);
+        }
+        else{
+            euro.value = '';
+            tg.value = '';
+            dollar.value = '';
+        }
+    }
+
+</script>
+</body>
+</html>
